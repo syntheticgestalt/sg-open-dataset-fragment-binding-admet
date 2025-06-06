@@ -16,10 +16,10 @@ Binding affinity data for 1,905 fragment compounds against four target proteins,
 
 | Target Protein | Description | Hit Compounds | Reliable Kd Values |
 |---|---|---|---|
-| **BRD4** | Bromodomain-Containing Protein 4<br/>Epigenetic reader protein | 78 | Kd < 1 mM |
-| **NRP1** | Neuropilin-1<br/>Cell surface co-receptor involved in angiogenesis and neuronal guidance | 192 | 146 compounds with Kd < 1 mM |
-| **SKP1** | S-phase kinase-associated protein 1<br/>Component of ubiquitin-proteasome system | 98 | 18 compounds with Kd < 1 mM |
-| **STING** | Stimulator of Interferon Genes<br/>Central adaptor protein in innate immune response | 129 | 39 compounds with Kd < 1 mM |
+| **BRD4** | Bromodomain-Containing Protein 4<br/>Epigenetic reader protein | 78 | 29 compounds with Kd < 1 mM |
+| **NRP1** | Neuropilin-1<br/>Cell surface co-receptor | 192 | 66 compounds with Kd < 1 mM |
+| **SKP1** | S-phase kinase-associated protein 1<br/>Component of SCF (SKP1–Cullin–F-box) complex | 98 | 6 compounds with Kd < 1 mM |
+| **STING** | Stimulator of Interferon Genes<br/>Cytosolic adaptor protein central to the DNA-sensing pathway | 129 | 8 compounds with Kd < 1 mM |
 
 ### 2. ADMET Property Data
 
@@ -29,7 +29,7 @@ Pharmacokinetic and toxicity properties measured for 50 compounds:
 |---|---|---|
 | **BBB Permeability** | Bidirectional permeability assay using MDR1-MDCKII cells | LogBB ≥ -1: Permeable (1) |
 | **Microsomal Stability** | Metabolic stability assessment in human liver microsomes | t₁/₂ > 30 min: Stable (1) |
-| **3T3 Phototoxicity** | Phototoxicity assay using NIH/3T3 cells | PIF < 2: Non-phototoxic (1) |
+| **3T3 Phototoxicity** | Phototoxicity assay using NIH/3T3 mouse fibroblast cells | PIF < 2: Non-phototoxic (1) |
 
 ## 🔬 Experimental Methods
 
@@ -41,7 +41,7 @@ Pharmacokinetic and toxicity properties measured for 50 compounds:
   - Association phase: 30 seconds
   - Dissociation phase: 60-120 seconds
   - Compound concentrations: 50, 150, 500 µM (dose-response experiments)
-- **Data Analysis**: Dissociation constants (Kd) calculated from steady-state binding responses
+- **Data Analysis**: Dissociation constants (Kd) determined based on the SPR response plotted against compound concentration
 
 ### ADMET Evaluation
 
@@ -83,30 +83,27 @@ sg-fragment-binding-admet-open-dataset/
 ### Data Format
 
 #### Fragment Binding Data
-- `compound_id`: Compound identifier
 - `smiles`: Compound SMILES structure
-- `kd_value`: Dissociation constant (M)
 - `binding_class`: Binary classification (1: Kd < 1 mM, 0: Kd ≥ 1 mM)
-- `experimental_conditions`: Experimental conditions
 
 #### ADMET Property Data
 - `compound_id`: Compound identifier
 - `property_value`: Measured value
 - `classification`: Binary classification (1: favorable, 0: unfavorable)
-- `measurement_method`: Measurement technique
+- `smiles`: Compound SMILES structure
 
 ## 📊 Statistical Summary
 
 ### Binding Affinity Distribution
-- **BRD4**: Active compound rate 4.1% (78/1,905)
-- **NRP1**: Active compound rate 7.7% (146/1,905)
-- **SKP1**: Active compound rate 0.9% (18/1,905)
-- **STING**: Active compound rate 2.0% (39/1,905)
+- **BRD4**: Active compound rate 1.5% (29/1,905)
+- **NRP1**: Active compound rate 3.5% (66/1,905)
+- **SKP1**: Active compound rate 0.3% (6/1,905)
+- **STING**: Active compound rate 0.4% (8/1,905)
 
 ### ADMET Property Distribution
-- **BBB Permeability**: Permeable 68% (34/50)
-- **Microsomal Stability**: Stable 44% (22/50)
-- **3T3 Phototoxicity**: Non-toxic 88% (44/50)
+- **BBB Permeability**: Permeable 98% (49/50)
+- **Microsomal Stability**: Stable 70% (35/50)
+- **3T3 Phototoxicity**: Non-toxic 90% (45/50)
 
 ## 📄 Citation
 
@@ -134,4 +131,4 @@ We welcome contributions for data quality improvements and new analytical approa
 
 > **Note**: This dataset is intended for research and educational purposes. For commercial use, please contact us separately.
 
-> **Disclaimer**: We do not guarantee the accuracy or completeness of the experimental data. Users are responsible for appropriate utilization of the data.
+> **Disclaimer**: We do not guarantee the accuracy or completeness of the experimental data. Users are responsible for the appropriate utilization of the data.
